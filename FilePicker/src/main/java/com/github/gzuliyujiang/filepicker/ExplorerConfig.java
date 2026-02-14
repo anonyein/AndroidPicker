@@ -17,6 +17,7 @@ import android.content.Context;
 import android.graphics.drawable.Drawable;
 import android.os.Environment;
 
+import androidx.annotation.ColorInt;
 import androidx.annotation.Dimension;
 import androidx.core.content.ContextCompat;
 
