@@ -99,10 +99,10 @@ public class PathAdapter extends RecyclerView.Adapter<ViewHolder> {
             holder.textView.setTypeface(Typeface.defaultFromStyle(Typeface.NORMAL));
             holder.imageView.setVisibility(View.VISIBLE);
         }
-        if (explorerConfig.getPathTextColor() != -1) {
+        if (null != explorerConfig && explorerConfig.getPathTextColor() != -1) {
             holder.textView.setTextColor(explorerConfig.getPathTextColor());
         }
-        if (explorerConfig.getPathBackgroundColor() != -1) {
+        if (null != explorerConfig && explorerConfig.getPathBackgroundColor() != -1) {
             holder.itemView.setBackgroundColor(explorerConfig.getPathBackgroundColor());
         }
         if (onPathClickedListener == null) {
