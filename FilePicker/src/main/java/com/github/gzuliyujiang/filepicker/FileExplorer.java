@@ -116,12 +116,13 @@ public class FileExplorer extends FrameLayout implements OnFileLoadedListener, O
         refreshCurrent(explorerConfig.getRootDir());
     }
 
-    public void setColor(@NonNull ExplorerConfig config) {
+    public void setData(@NonNull ExplorerConfig config) {
         if (explorerConfig == null) {
             explorerConfig = config;
         }
         explorerConfig.setItemTextColor(config.getItemTextColor());
         explorerConfig.setItemBackgroundColor(config.getItemBackgroundColor());
+        explorerConfig.setItemHeight(config.getItemHeight());
     }
 
     @Override
