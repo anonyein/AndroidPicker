@@ -3,7 +3,7 @@ name: Gradle Build
 on:
   release:
     types: [ created ]
-  workflow_dispatch:        # 添加手动触发支持
+  workflow_dispatch:        # 手动触发
 
 jobs:
   build:
@@ -24,9 +24,18 @@ jobs:
       - name: Build with Gradle
         run: ./gradlew build
 
-      # 上传构建产物（默认路径：build/libs/）
+      # 可选：列出所有找到的构建产物（用于调试）
+      - name: List build outputs
+        run: |
+          echo "Looking for JARs, AARs, APKs..."
+          find . -path "*/build/libs/*.jar" -o -path "*/build/outputs/aar/*.aar" -o -path "*/build/outputs/apk/**/*.apk" | sort
+
       - name: Upload build artifacts
         uses: actions/upload-artifact@v4
         with:
-          name: package
-          path: build/libs/
+          name: build-outputs                 # 产物压缩包名称
+          path: |                             # 匹配所有子模块的常见产物路径
+            **/build/libs/*.jar
+            **/build/outputs/aar/*.aar
+            **/build/outputs/apk/**/*.apk
+          if-no-files-found: warn              # 如果没有匹配文件，仅警告而不失败
