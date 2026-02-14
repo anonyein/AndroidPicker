@@ -119,7 +119,7 @@ public class ExplorerConfig implements Serializable {
     }
 
     public ExplorerConfig setItemTextColor(@ColorInt int color) {
-        this.itemBackgroundColor = color;
+        this.itemTextColor = color;
         return this;
     }
 
