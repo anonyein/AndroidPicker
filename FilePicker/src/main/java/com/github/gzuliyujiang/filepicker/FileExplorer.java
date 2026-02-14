@@ -28,6 +28,7 @@ import androidx.annotation.RequiresApi;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.github.gzuliyujiang.dialog.DialogLog;
+import com.github.gzuliyujiang.filepicker.ExplorerConfig;
 import com.github.gzuliyujiang.filepicker.adapter.FileAdapter;
 import com.github.gzuliyujiang.filepicker.adapter.FileEntity;
 import com.github.gzuliyujiang.filepicker.adapter.PathAdapter;
