@@ -53,9 +53,6 @@ public class FilePicker extends ModalDialog {
     @Override
     protected View createBodyView() {
         fileExplorer = new FileExplorer(activity);
-        if (explorerConfig != null) {
-            fileExplorer.load(explorerConfig);  // 立即设置 config
-        }
         return fileExplorer;
     }
 

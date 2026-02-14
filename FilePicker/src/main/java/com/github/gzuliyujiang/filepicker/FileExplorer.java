@@ -106,7 +106,7 @@ public class FileExplorer extends FrameLayout implements OnFileLoadedListener, O
     public void load(@Nullable ExplorerConfig config) {
         if (config != null) {
             explorerConfig = config;
-            pathAdapter.setExplorerConfig(explorerConfig);
+            pathAdapter.setExplorerConfig(config);
             pathListView.setAdapter(pathAdapter);
             fileAdapter = new FileAdapter(config);
             fileListView.setAdapter(fileAdapter);
