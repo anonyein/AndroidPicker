@@ -92,18 +92,18 @@ public class PathAdapter extends RecyclerView.Adapter<ViewHolder> {
         final int adapterPosition = holder.getAdapterPosition();
         holder.textView.setText(paths.get(adapterPosition));
         holder.imageView.setImageDrawable(arrowIcon);
-        if (explorerConfig.getPathBackgroundColor() != -1) {
-            holder.itemView.setBackgroundColor(explorerConfig.getPathBackgroundColor());
-        }
-        if (explorerConfig.getPathTextColor() != -1) {
-            holder.textView.setTextColor(explorerConfig.getPathTextColor());
-        }
         if (adapterPosition == getItemCount() - 1) {
             holder.textView.setTypeface(Typeface.defaultFromStyle(Typeface.BOLD));
             holder.imageView.setVisibility(View.GONE);
         } else {
             holder.textView.setTypeface(Typeface.defaultFromStyle(Typeface.NORMAL));
             holder.imageView.setVisibility(View.VISIBLE);
+        }
+        if (explorerConfig.getPathTextColor() != -1) {
+            holder.textView.setTextColor(explorerConfig.getPathTextColor());
+        }
+        if (explorerConfig.getPathBackgroundColor() != -1) {
+            holder.itemView.setBackgroundColor(explorerConfig.getPathBackgroundColor());
         }
         if (onPathClickedListener == null) {
             return;

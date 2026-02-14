@@ -109,11 +109,11 @@ public class FileAdapter extends RecyclerView.Adapter<ViewHolder> {
         final FileEntity item = getItem(adapterPosition);
         holder.imageView.setImageDrawable(item.getIcon());
         holder.textView.setText(item.getName());
-        if (explorerConfig.getItemBackgroundColor() != -1) {
-            holder.itemView.setBackgroundColor(explorerConfig.getItemBackgroundColor());
-        }
         if (explorerConfig.getItemTextColor() != -1) {
             holder.textView.setTextColor(explorerConfig.getItemTextColor());
+        }
+        if (explorerConfig.getItemBackgroundColor() != -1) {
+            holder.itemView.setBackgroundColor(explorerConfig.getItemBackgroundColor());
         }
         if (explorerConfig.getOnPathClickedListener() == null) {
             return;
