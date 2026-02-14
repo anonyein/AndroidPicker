@@ -103,6 +103,8 @@ public class FilePicker extends ModalDialog {
         explorerConfig = config;
         if (initialized) {
             fileExplorer.load(config);
+        } else {
+            fileExplorer.setColor(config);
         }
     }
 
