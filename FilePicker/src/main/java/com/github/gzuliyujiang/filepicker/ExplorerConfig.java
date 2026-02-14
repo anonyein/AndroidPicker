@@ -47,6 +47,8 @@ public class ExplorerConfig implements Serializable {
     private boolean showHideDir = true;
     private int fileSort = FileSort.BY_NAME_ASC;
     private int itemHeight = 40;
+    private @ColorInt int itemBackgroundColor = -1;  // 使用基本类型，-1 作为默认值
+    private @ColorInt int itemTextColor = -1;
     private Drawable homeIcon;
     private Drawable upIcon;
     private Drawable folderIcon;
@@ -102,6 +104,24 @@ public class ExplorerConfig implements Serializable {
         }
         this.itemHeight = itemHeight;
         return this;
+    }
+
+    public ExplorerConfig setItemBackgroundColor(@ColorInt int color) {
+        this.itemBackgroundColor = color;
+        return this;
+    }
+
+    public ExplorerConfig setItemTextColor(@ColorInt int color) {
+        this.itemBackgroundColor = color;
+        return this;
+    }
+
+    public int getItemBackgroundColor() {
+        return itemBackgroundColor;
+    }
+
+    public int getItemTextColor() {
+        return itemTextColor;
     }
 
     public int getItemHeight() {
