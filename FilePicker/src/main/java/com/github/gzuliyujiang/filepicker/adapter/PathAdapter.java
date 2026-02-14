@@ -50,9 +50,14 @@ public class PathAdapter extends RecyclerView.Adapter<ViewHolder> {
     private final LinkedList<String> paths = new LinkedList<>();
     private Drawable arrowIcon = null;
     private OnPathClickedListener onPathClickedListener;
+    private ExplorerConfig explorerConfig;
 
     public PathAdapter(@NonNull Context context) {
         this.context = context;
+    }
+
+    public void setExplorerConfig(ExplorerConfig explorerConfig) {
+        this.explorerConfig = explorerConfig;
     }
 
     @NonNull
@@ -86,6 +91,12 @@ public class PathAdapter extends RecyclerView.Adapter<ViewHolder> {
         final int adapterPosition = holder.getAdapterPosition();
         holder.textView.setText(paths.get(adapterPosition));
         holder.imageView.setImageDrawable(arrowIcon);
+        if (explorerConfig.getPathBackgroundColor() != -1) {
+            holder.itemView.setBackgroundColor(explorerConfig.getPathBackgroundColor());
+        }
+        if (explorerConfig.getPathTextColor() != -1) {
+            holder.textView.setTextColor(explorerConfig.getPathTextColor());
+        }
         if (adapterPosition == getItemCount() - 1) {
             holder.textView.setTypeface(Typeface.defaultFromStyle(Typeface.BOLD));
             holder.imageView.setVisibility(View.GONE);

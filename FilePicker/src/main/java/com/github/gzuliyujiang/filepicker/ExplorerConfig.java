@@ -50,6 +50,8 @@ public class ExplorerConfig implements Serializable {
     private int itemHeight = 40;
     private @ColorInt int itemBackgroundColor = -1;  // 使用基本类型，-1 作为默认值
     private @ColorInt int itemTextColor = -1;
+    private @ColorInt int pathBackgroundColor = -1;
+    private @ColorInt int pathTextColor = -1;
     private Drawable homeIcon;
     private Drawable upIcon;
     private Drawable folderIcon;
@@ -112,17 +114,35 @@ public class ExplorerConfig implements Serializable {
         return this;
     }
 
+    public int getItemBackgroundColor() {
+        return itemBackgroundColor;
+    }
+
     public ExplorerConfig setItemTextColor(@ColorInt int color) {
         this.itemBackgroundColor = color;
         return this;
     }
 
-    public int getItemBackgroundColor() {
-        return itemBackgroundColor;
-    }
-
     public int getItemTextColor() {
         return itemTextColor;
+    }
+
+    public ExplorerConfig setPathBackgroundColor(int pathBackgroundColor) {
+        this.pathBackgroundColor = pathBackgroundColor;
+        return this;
+    }
+
+    public int getPathBackgroundColor() {
+        return pathBackgroundColor;
+    }
+
+    public ExplorerConfig setPathTextColor(int pathTextColor) {
+        this.pathTextColor = pathTextColor;
+        return this;
+    }
+
+    public int getPathTextColor() {
+        return pathTextColor;
     }
 
     public int getItemHeight() {

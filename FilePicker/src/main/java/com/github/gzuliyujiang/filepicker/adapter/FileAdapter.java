@@ -110,7 +110,7 @@ public class FileAdapter extends RecyclerView.Adapter<ViewHolder> {
         holder.imageView.setImageDrawable(item.getIcon());
         holder.textView.setText(item.getName());
         if (explorerConfig.setItemBackgroundColor() != -1) {
-            holder.itemView.setBackgroundColor(explorerConfig.setItemBackgroundColor());
+            holder.itemView.setBackgroundColor(explorerConfig.getItemBackgroundColor());
         }
         if (explorerConfig.getItemTextColor() != -1) {
             holder.textView.setTextColor(explorerConfig.getItemTextColor());
